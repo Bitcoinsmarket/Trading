@@ -36,12 +36,12 @@
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 16px;
       margin: 20px 10px 10px;
     }
 
     p.description {
-      font-size: 16px;
+      font-size: 14px;
       margin: 15px 0;
     }
 
@@ -111,11 +111,6 @@
 
     <h2>Start Your Bitcoin Learning Journey — Made Simple for Indian Traders</h2>
 
-    <!-- First button moved here -->
-    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl">
-      JOIN FREE TELEGRAM
-    </a>
-
     <p class="description">
       Learn how to understand Bitcoin, blockchain, and make smarter crypto decisions — no hype, no signals, no prior experience required.
     </p>
@@ -130,13 +125,17 @@
       </ul>
     </div>
 
+    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl" target="_blank" rel="noopener noreferrer">
+      JOIN FREE TELEGRAM
+    </a>
+
     <div>
       <a href="#" class="countdown-btn" id="countdownBtn">
         Free Joining Ends In <span id="timer">20</span> seconds
       </a>
     </div>
 
-    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl">
+    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl" target="_blank" rel="noopener noreferrer">
       JOIN FREE TELEGRAM
     </a>
 
@@ -153,15 +152,13 @@
     let timeLeft = 20;
     const timerEl = document.getElementById("timer");
     const countdownBtn = document.getElementById("countdownBtn");
-    const redirectURL = "https://telegram.me/+JhL-_ilh-RM3NzZl";
 
     const countdown = setInterval(() => {
       timeLeft--;
       timerEl.textContent = timeLeft;
       if (timeLeft <= 0) {
         clearInterval(countdown);
-        countdownBtn.textContent = "Redirecting to Telegram...";
-        window.location.href = redirectURL; // Redirect in same tab
+        countdownBtn.textContent = "Offer Expired! Join Now Before It's Gone!";
       }
     }, 1000);
   </script>
