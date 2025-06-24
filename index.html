@@ -36,12 +36,12 @@
     }
 
     h2 {
-      font-size: 16px;
+      font-size: 18px;
       margin: 20px 10px 10px;
     }
 
     p.description {
-      font-size: 14px;
+      font-size: 16px;
       margin: 15px 0;
     }
 
@@ -78,7 +78,7 @@
       color: #fff;
       border-radius: 5px;
       font-size: 16px;
-      margin: 15px 0;
+      margin: 10px 0;
       text-decoration: none;
     }
 
@@ -100,6 +100,37 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+
+    /* Modal Styling */
+    #telegramModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #telegramModal .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    #telegramModal button {
+      padding: 10px 20px;
+      background: #FF5722;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -107,60 +138,4 @@
     <img class="dp" src="bitcoin.jpg" alt="Bitcoin Icon" />
 
     <h1>🔥 Bitcoin Hub India 🔥</h1>
-    <small>26,295+ Subscribers</small>
-
-    <h2>Start Your Bitcoin Learning Journey — Made Simple for Indian Traders</h2>
-
-    <p class="description">
-      Learn how to understand Bitcoin, blockchain, and make smarter crypto decisions — no hype, no signals, no prior experience required.
-    </p>
-
-    <div>
-      <strong>Why Our Telegram Community Works:</strong>
-      <ul>
-        <li>✅ Daily Bitcoin market highlights</li>
-        <li>✅ News updates explained in simple Hindi</li>
-        <li>✅ Q&A and community polls</li>
-        <li>✅ Scam alerts and safety tips</li>
-      </ul>
-    </div>
-
-    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl" target="_blank" rel="noopener noreferrer">
-      JOIN FREE TELEGRAM
-    </a>
-
-    <div>
-      <a href="#" class="countdown-btn" id="countdownBtn">
-        Free Joining Ends In <span id="timer">20</span> seconds
-      </a>
-    </div>
-
-    <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl" target="_blank" rel="noopener noreferrer">
-      JOIN FREE TELEGRAM
-    </a>
-
-    <p class="note">
-      📌 Disclaimer: This platform is for educational purposes only. We do not provide investment advice or guaranteed returns. Crypto markets are volatile and involve risk. Always do your own research or consult a financial advisor.
-    </p>
-  </div>
-
-  <footer>
-    <p>© 2025 Bitcoin Hub India • All Rights Reserved</p>
-  </footer>
-
-  <script>
-    let timeLeft = 20;
-    const timerEl = document.getElementById("timer");
-    const countdownBtn = document.getElementById("countdownBtn");
-
-    const countdown = setInterval(() => {
-      timeLeft--;
-      timerEl.textContent = timeLeft;
-      if (timeLeft <= 0) {
-        clearInterval(countdown);
-        countdownBtn.textContent = "Offer Expired! Join Now Before It's Gone!";
-      }
-    }, 1000);
-  </script>
-</body>
-</html>
+    <small>26,295+
