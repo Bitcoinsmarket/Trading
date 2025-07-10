@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="India's most trusted crypto learning group. Understand Bitcoin and blockchain safely with zero hype or financial advice.">
-  <title>Bitcoin Hub India – Learn Bitcoin Safely</title>
+  <meta name="description" content="Join India's beginner-friendly Bitcoin Telegram channel. Learn basics, market trends, and avoid scams — no financial advice or false promises.">
+  <title>🔥 Bitcoin Hub India</title>
+  <link rel="preload" as="image" href="bitcoin.webp" type="image/webp" />
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(to bottom right, #ffffff, #cdf2ff);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e9f1f7, #f8fcff);
       color: #222;
       text-align: center;
     }
@@ -19,11 +20,6 @@
       padding: 20px;
       max-width: 500px;
       margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
     }
 
     img.dp {
@@ -37,7 +33,7 @@
     h1 {
       font-size: 26px;
       margin: 10px 0;
-      color: #002060;
+      color: #229ED9;
     }
 
     h2 {
@@ -79,13 +75,12 @@
     .countdown-btn {
       display: inline-block;
       padding: 12px 25px;
-      background: linear-gradient(135deg, #cdf2ff, #a6e8f5);
-      color: #222;
+      background-color: #1272A2;
+      color: #fff;
       border-radius: 5px;
       font-size: 16px;
       margin: 10px 0;
       text-decoration: none;
-      font-weight: bold;
     }
 
     .note {
@@ -107,6 +102,7 @@
       100% { transform: scale(1); }
     }
 
+    /* Modal Styling */
     #telegramModal {
       position: fixed;
       top: 0; left: 0;
@@ -140,21 +136,23 @@
 </head>
 <body>
   <div class="container">
-    <img class="dp" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Icon" loading="eager" decoding="async" fetchpriority="high" />
+    <img class="dp" src="bitcoin.webp" alt="Bitcoin Icon" width="100" height="100" loading="eager" decoding="async" fetchpriority="high" />
 
-    <h1>Bitcoin Hub India</h1>
-    <small><span id="subscribers">26546</span>+ Subscribers</small>
+    <h1>🔥 Bitcoin Hub India 🔥</h1>
+    <small><span id="subscribers">26,546</span> Subscribers</small>
 
-    <h2>Start your Bitcoin learning journey — simple, safe & scam-free.</h2>
+    <h2>Start Your Bitcoin Learning Journey — Made Simple for Indian Traders</h2>
 
+    <!-- Telegram Button -->
     <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl">
-      Join Free Telegram
+      JOIN FREE TELEGRAM
     </a>
 
     <p class="description">
       Learn how to understand Bitcoin, blockchain, and make smarter crypto decisions — no hype, no signals, no prior experience required.
     </p>
 
+    <!-- Countdown and Button -->
     <div>
       <a href="javascript:void(0);" class="countdown-btn" id="countdownBtn">
         Free Joining Ends In <span id="timer">20</span> seconds
@@ -162,16 +160,16 @@
     </div>
 
     <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl">
-      Join Free Telegram
+      JOIN FREE TELEGRAM
     </a>
 
     <div>
-      <strong>Why People Love Our Telegram Group:</strong>
+      <strong>Why Our Telegram Community Works:</strong>
       <ul>
-        <li>✅ Daily Bitcoin market insights</li>
-        <li>✅ Simple Hindi explanations</li>
-        <li>✅ Scam alerts & safety tips</li>
-        <li>✅ Community polls & Q&A</li>
+        <li>✅ Daily Bitcoin market highlights</li>
+        <li>✅ News updates explained in simple Hindi</li>
+        <li>✅ Q&A and community polls</li>
+        <li>✅ Scam alerts and safety tips</li>
       </ul>
     </div>
 
@@ -184,17 +182,19 @@
     <p>© 2025 Bitcoin Hub India • All Rights Reserved</p>
   </footer>
 
+  <!-- Telegram Preview Modal -->
   <div id="telegramModal">
     <div class="modal-content">
       <h3>📢 Join Bitcoin Hub India</h3>
       <p style="font-size:14px; margin-bottom:20px;">
-        You're about to join our learning group trusted by 26,000+ members.
+        You're about to join our Telegram group with 26,000+ members.
       </p>
       <button id="joinTelegramNow">Join Now</button>
       <p style="font-size:12px; color:#777; margin-top:15px;">We never spam or share your data.</p>
     </div>
   </div>
 
+  <!-- Logic -->
   <script>
     const timerEl = document.getElementById("timer");
     const countdownBtn = document.getElementById("countdownBtn");
@@ -203,12 +203,11 @@
     const redirectURL = "https://telegram.me/+JhL-_ilh-RM3NzZl";
     const subsEl = document.getElementById("subscribers");
 
-    // Countdown Timer Logic
+    // Countdown Timer
     let timeLeft = 20;
     const countdown = setInterval(() => {
       timeLeft--;
       timerEl.textContent = timeLeft;
-
       if (timeLeft <= 0) {
         clearInterval(countdown);
         countdownBtn.textContent = "Redirecting...";
@@ -223,12 +222,20 @@
       window.location.href = redirectURL;
     };
 
-    // Subscriber Counter Increases by 5/sec
-    let subsCount = 26546;
-    setInterval(() => {
-      subsCount += 5;
-      subsEl.textContent = subsCount.toLocaleString("en-IN");
-    }, 1000);
+    // Subscriber counter (persistent & capped)
+    const MAX_SUBS = 26600;
+    let subsCount = parseInt(localStorage.getItem("subsCount")) || 26546;
+
+    function updateSubs() {
+      if (subsCount < MAX_SUBS) {
+        subsCount += 1;
+        subsEl.textContent = subsCount.toLocaleString("en-IN");
+        localStorage.setItem("subsCount", subsCount);
+      }
+    }
+
+    // Increment 5 per second (1 every 200ms)
+    setInterval(updateSubs, 200);
   </script>
 </body>
 </html>
