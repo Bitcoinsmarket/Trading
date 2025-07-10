@@ -79,12 +79,13 @@
     .countdown-btn {
       display: inline-block;
       padding: 12px 25px;
-      background-color: #4CAF50;
-      color: #fff;
+      background: linear-gradient(135deg, #cdf2ff, #a6e8f5);
+      color: #222;
       border-radius: 5px;
       font-size: 16px;
       margin: 10px 0;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .note {
@@ -139,10 +140,10 @@
 </head>
 <body>
   <div class="container">
-    <img class="dp" src="bitcoin.webp" alt="Bitcoin Icon" width="100" height="100" loading="eager" decoding="async" fetchpriority="high" />
+    <img class="dp" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Icon" loading="eager" decoding="async" fetchpriority="high" />
 
     <h1>Bitcoin Hub India</h1>
-    <small>Trusted by thousands of crypto learners</small>
+    <small><span id="subscribers">26546</span>+ Subscribers</small>
 
     <h2>Start your Bitcoin learning journey — simple, safe & scam-free.</h2>
 
@@ -156,7 +157,7 @@
 
     <div>
       <a href="javascript:void(0);" class="countdown-btn" id="countdownBtn">
-        Early Access Offer Ends in <span id="timer">20</span> seconds
+        Free Joining Ends In <span id="timer">20</span> seconds
       </a>
     </div>
 
@@ -200,9 +201,10 @@
     const modal = document.getElementById("telegramModal");
     const joinTelegramNow = document.getElementById("joinTelegramNow");
     const redirectURL = "https://telegram.me/+JhL-_ilh-RM3NzZl";
+    const subsEl = document.getElementById("subscribers");
 
+    // Countdown Timer Logic
     let timeLeft = 20;
-
     const countdown = setInterval(() => {
       timeLeft--;
       timerEl.textContent = timeLeft;
@@ -211,7 +213,6 @@
         clearInterval(countdown);
         countdownBtn.textContent = "Redirecting...";
         modal.style.display = "flex";
-
         setTimeout(() => {
           window.location.href = redirectURL;
         }, 2000);
@@ -221,6 +222,13 @@
     joinTelegramNow.onclick = function () {
       window.location.href = redirectURL;
     };
+
+    // Subscriber Counter Increases by 5/sec
+    let subsCount = 26546;
+    setInterval(() => {
+      subsCount += 5;
+      subsEl.textContent = subsCount.toLocaleString("en-IN");
+    }, 1000);
   </script>
 </body>
 </html>
