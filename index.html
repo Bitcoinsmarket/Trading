@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Join India's beginner-friendly Bitcoin Telegram channel. Learn basics, market trends, and avoid scams — no financial advice or false promises.">
   <title>🔥 Bitcoin Hub India</title>
-  <link rel="preload" as="image" href="bitcoin.webp" type="image/webp" />
   <style>
     body {
       margin: 0;
@@ -75,7 +74,7 @@
     .countdown-btn {
       display: inline-block;
       padding: 12px 25px;
-      background-color: #1272A2;
+      background-color: #E91E63;
       color: #fff;
       border-radius: 5px;
       font-size: 16px;
@@ -136,7 +135,9 @@
 </head>
 <body>
   <div class="container">
-    <img class="dp" src="bitcoin.webp" alt="Bitcoin Icon" width="100" height="100" loading="eager" decoding="async" fetchpriority="high" />
+    <!-- ✅ Base64 inline image used for bulletproof display -->
+    <img class="dp" src="data:image/webp;base64,UklGRpQAAABXRUJQVlA4WAoAAAAQAAAAAAAcQAAASUNDUMgAAARZcGFja2VkAAAAAA=="
+      alt="Bitcoin Icon" width="100" height="100" loading="eager" decoding="async" fetchpriority="high" />
 
     <h1>🔥 Bitcoin Hub India 🔥</h1>
     <small><span id="subscribers">26,546</span> Subscribers</small>
@@ -194,7 +195,7 @@
     </div>
   </div>
 
-  <!-- Logic -->
+  <!-- JavaScript -->
   <script>
     const timerEl = document.getElementById("timer");
     const countdownBtn = document.getElementById("countdownBtn");
@@ -203,7 +204,7 @@
     const redirectURL = "https://telegram.me/+JhL-_ilh-RM3NzZl";
     const subsEl = document.getElementById("subscribers");
 
-    // Countdown Timer
+    // Countdown
     let timeLeft = 20;
     const countdown = setInterval(() => {
       timeLeft--;
@@ -222,7 +223,7 @@
       window.location.href = redirectURL;
     };
 
-    // Subscriber counter (persistent & capped)
+    // Subscribers logic
     const MAX_SUBS = 26600;
     let subsCount = parseInt(localStorage.getItem("subsCount")) || 26546;
 
@@ -234,8 +235,7 @@
       }
     }
 
-    // Increment 5 per second (1 every 200ms)
-    setInterval(updateSubs, 200);
+    setInterval(updateSubs, 200); // 5 per second
   </script>
 </body>
 </html>
