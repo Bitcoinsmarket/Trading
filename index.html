@@ -135,16 +135,21 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ Base64 inline image used for bulletproof display -->
-    <img class="dp" src="data:image/webp;base64,UklGRpQAAABXRUJQVlA4WAoAAAAQAAAAAAAcQAAASUNDUMgAAARZcGFja2VkAAAAAA=="
-      alt="Bitcoin Icon" width="100" height="100" loading="eager" decoding="async" fetchpriority="high" />
+    <!-- ✅ Bitcoin DP image with fast-loading attributes -->
+    <img class="dp"
+         src="bitcoin.jpg"
+         alt="Bitcoin Logo"
+         width="100"
+         height="100"
+         loading="eager"
+         decoding="async"
+         fetchpriority="high" />
 
     <h1>🔥 Bitcoin Hub India 🔥</h1>
     <small><span id="subscribers">26,546</span> Subscribers</small>
 
     <h2>Start Your Bitcoin Learning Journey — Made Simple for Indian Traders</h2>
 
-    <!-- Telegram Button -->
     <a class="telegram-btn" href="https://telegram.me/+JhL-_ilh-RM3NzZl">
       JOIN FREE TELEGRAM
     </a>
@@ -153,7 +158,6 @@
       Learn how to understand Bitcoin, blockchain, and make smarter crypto decisions — no hype, no signals, no prior experience required.
     </p>
 
-    <!-- Countdown and Button -->
     <div>
       <a href="javascript:void(0);" class="countdown-btn" id="countdownBtn">
         Free Joining Ends In <span id="timer">20</span> seconds
@@ -183,7 +187,7 @@
     <p>© 2025 Bitcoin Hub India • All Rights Reserved</p>
   </footer>
 
-  <!-- Telegram Preview Modal -->
+  <!-- Modal -->
   <div id="telegramModal">
     <div class="modal-content">
       <h3>📢 Join Bitcoin Hub India</h3>
@@ -223,7 +227,7 @@
       window.location.href = redirectURL;
     };
 
-    // Subscribers logic
+    // Subscribers increasing logic
     const MAX_SUBS = 26600;
     let subsCount = parseInt(localStorage.getItem("subsCount")) || 26546;
 
@@ -235,7 +239,7 @@
       }
     }
 
-    setInterval(updateSubs, 200); // 5 per second
+    setInterval(updateSubs, 200); // 5 per second = 1 every 200ms
   </script>
 </body>
 </html>
