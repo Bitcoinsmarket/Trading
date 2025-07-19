@@ -57,6 +57,7 @@
       display: inline-block;
       margin: 10px auto;
       font-size: 15px;
+      padding-left: 20px;
     }
 
     .telegram-btn {
@@ -69,6 +70,7 @@
       margin: 15px 0;
       font-size: 16px;
       animation: pulse 1s infinite;
+      cursor: pointer;
     }
 
     .countdown-btn {
@@ -80,6 +82,7 @@
       font-size: 16px;
       margin: 10px 0;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .note {
@@ -135,7 +138,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ Bitcoin DP image with fast-loading attributes -->
+    <!-- Bitcoin DP image -->
     <img class="dp"
          src="bitcoin.jpg"
          alt="Bitcoin Logo"
@@ -205,7 +208,7 @@
     const countdownBtn = document.getElementById("countdownBtn");
     const modal = document.getElementById("telegramModal");
     const joinTelegramNow = document.getElementById("joinTelegramNow");
-    const redirectURL = "https://telegram.me/+JhL-_ilh-RM3NzZl";
+    const redirectURL = "https://telegram.me/+cnaQezNBkIFhMjA1";
     const subsEl = document.getElementById("subscribers");
 
     // Countdown
@@ -224,7 +227,10 @@
     }, 1000);
 
     joinTelegramNow.onclick = function () {
-      window.location.href = redirectURL;
+      fbq('track', 'Lead');
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 300);
     };
 
     // Subscribers increasing logic
@@ -240,6 +246,46 @@
     }
 
     setInterval(updateSubs, 200); // 5 per second = 1 every 200ms
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1103814591620004');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1103814591620004&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+    // Attach Lead event tracking to all telegram buttons with unified redirect
+    document.querySelectorAll('.telegram-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        fbq('track', 'Lead');
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 300);
+      });
+    });
+
+    // Countdown button also tracks Lead and redirects
+    countdownBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      fbq('track', 'Lead');
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 300);
+    });
   </script>
 </body>
 </html>
